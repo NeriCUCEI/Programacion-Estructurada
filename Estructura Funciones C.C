@@ -1,8 +1,3 @@
-
-GABRIEL ANTONIO NERI REYES <gabriel.neri5969@alumnos.udg.mx>
-vie, 17 abr, 8:57 a.m. (hace 1 día)
-para mí
-
 #include <stdio.h>
 
 int Suma_Enteros(int num_1, int num_2) {
