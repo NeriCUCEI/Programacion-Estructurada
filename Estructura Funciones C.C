@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/* 
+  Gabriel Antonio Neri Reyes
+  222555699
+  Programación Estructurada
+*/
+
 int Suma_Enteros(int num_1, int num_2) {
     return num_1 + num_2;
 }
@@ -38,8 +44,8 @@ int main() {
     printf("%d\n", sizeof(A)/4);
     Mostrar(A, sizeof(A)/4);
     Mostrar_Matriz(M);
-    Duplicar(z);
-    printf("%d\n", z);
+    Duplicar(&z);
+    printf("z = %d\n", z);
     return 0;
 }
 
