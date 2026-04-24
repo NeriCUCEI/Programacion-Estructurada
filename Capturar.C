@@ -30,13 +30,14 @@ int Suma_Diagonal_Principal(int M[3][3]) {
 }
 
 void Guardar_Matriz(int M[3][3], FILE *Archivo) {
-    Archivo = fopen("Matriz.txt", "w");
+    Archivo = fopen("Matriz.txt", "a");
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++){
             fprintf(Archivo, "[%d] ", M[i][j]);
         }
         fprintf(Archivo, "\n");
     }
+    fprintf(Archivo, "\n");
     fclose(Archivo);
 }
 
