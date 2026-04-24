@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void Capturar(int M[3][3]) {
     for (int i = 0; i < 3; i++) {
@@ -21,14 +22,29 @@ void Mostrar(int M[3][3]) {
 }
 
 int Suma_Diagonal_Principal(int M[3][3]) {
-    return (M[0][0] + M[1][1] + M[2][2]);
+    int Suma = 0;
+    for (int n = 0; n < 3; n++) {
+        Suma += M[n][n];
+    }
+    return Suma;
+}
+
+void Guardar_Matriz(int M[3][3], FILE *Archivo) {
+    Archivo = fopen("Matriz.txt", "w");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++){
+            fprintf(Archivo, "[%d]", M[i][j]);
+        }
+        fprintf(Archivo, "\n");
+    }
+    fclose(Archivo);
 }
 
 int main() {
-    int M[3][3];
+    int M[3][3]; FILE *Archivo;
     Capturar(M);
     Mostrar(M);
     printf("Suma de la diagonal principal: %d\n", Suma_Diagonal_Principal(M));
+    Guardar_Matriz(M, Archivo);
     return 0;
 }
-
